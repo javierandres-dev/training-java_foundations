@@ -24,30 +24,22 @@ public class JavaFoundations {
         System.out.println("myShort: " + myShort);
         int myInteger = 2147483647;
         System.out.println("myInteger: " + myInteger);
-        long myLong = 922337203;
+        long myLong = 9223372036854775807L;
         System.out.println("myLong: " + myLong);
         float myFloat = 0.9999999f;
         System.out.println("myFloat: " + myFloat);
-        double myDouble = 0.999999999999999;
+        double myDouble = 0.999999999999999d;
         System.out.println("myDouble: " + myDouble);
         boolean myBoolean = true;
         System.out.println("myBoolean: " + myBoolean);
         char myCharacter = 'a';
         System.out.println("myCharacter: " + myCharacter);
-        /*
-        About the error: "incompatible types: String cannot be converted to char"
-        The "string" we declare them using double quotes,
-        the 'char' we declare them using single quotes.
-        Example:
-        String myString = "javi";
-        char myCharacter = 'j';
-        */
         // Non-primitives
         String myString = "Hello, World!";
         System.out.println("myString: " + myString);
         /* OPERATORS */
         /* CONTROL STRUCTURES */
-        
+        /* METHODS */
     }
     
 }
