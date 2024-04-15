@@ -6,8 +6,13 @@ public class Main {
         // first test
         System.out.println("Hello, World!");
         // VARIABLES
+        System.out.println("VARIABLES *******************************************************************************");
+        String myVariable = "Variable type variable";
+        System.out.println(myVariable);
+        final String myConstant = "Variable type constant";
+        System.out.println(myConstant);
         // DATA TYPES
-        System.out.println("************************************** DATA TYPES **************************************");
+        System.out.println("DATA TYPES ******************************************************************************");
         // Primitives
         byte myByte = 127;
         System.out.println("myByte: " + myByte);
@@ -37,7 +42,7 @@ public class Main {
                 """;
         System.out.println("myString: " + myString);
         // OPERATORS
-        System.out.println("*************************************** OPERATORS ***************************************");
+        System.out.println("OPERATORS *******************************************************************************");
         // Arithmetic
         System.out.println(100 + 10);
         System.out.println(100 - 10);
@@ -75,7 +80,35 @@ public class Main {
         System.out.println(100 > 10 && 5 < 50);
         System.out.println(100 < 10 || 5 > 50);
         System.out.println(!false);
-        System.out.println("********************************** CONTROL STRUCTURES **********************************");
-        System.out.println("**************************************** METHODS ****************************************");
+        System.out.println("CONTROL STRUCTURES **********************************************************************");
+        if (100 > 10) {
+            System.out.println("1..it's true");
+        }
+        if (10 > 100) {
+            System.out.println("2..it's true");
+        } else {
+            System.out.println("2..it's false");
+        }
+        System.out.println((100>10) ? "3..It's true": "3..it's false");
+        System.out.println((100<10) ? "4..It's true": "4..it's false");
+        if (100 == 10) {
+            System.out.println("5..it's true");
+        } else if (100 > 10) {
+            System.out.println("5..it's true");
+        } else {
+            System.out.println("5..it's false");
+        }
+        String expression = "I'm an expression";
+        switch (expression){
+            case "a":
+                System.out.println("a case");
+                break;
+            case "b":
+                System.out.println("b case");
+                break;
+            default:
+                System.out.println("default case");
+        }
+        System.out.println("METHODS *********************************************************************************");
     }
 }
