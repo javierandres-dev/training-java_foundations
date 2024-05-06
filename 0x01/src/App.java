@@ -168,6 +168,45 @@ public class App {
         }
     }
 
+    private static void aboutBreakContinue(){
+        // Jump statements
+        for(int i = 1; i < 10; i++){
+            if (i == 6) {
+                break;
+            }
+            if (i == 3) {
+                continue;
+            }
+            System.out.println("i: " + i);
+        }
+    }
+
+    private static void aboutArrays(){
+        // Arrays
+        String[] myArrayStrings;
+        String[] names = {"Jane", "John"};
+        int[] numbers = {10, 20, 30};
+        System.out.println("names: " + names);
+        System.out.println("numbers.length: " + numbers.length);
+        myArrayStrings = names;
+        System.out.println("myArrayStrings: " + myArrayStrings);
+        names[1] = "Anne";
+        System.out.println(myArrayStrings[1]);
+        numbers = new int[2];
+        numbers[0] = 10;
+        numbers[1] = 20;
+        System.out.println("numbers.length: " + numbers.length);
+        // Multidimensional Arrays
+        int[][] myMatriz = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        System.out.println(myMatriz[1][1]);
+        myMatriz[1][1] = 0;
+        System.out.println(myMatriz[1][1]);
+    }
+
+    private static void aboutArryList(){
+        // Array List
+    }
+
     public static void main(String[] args) throws Exception {
         //aboutPrint();
         //aboutVariables();
@@ -175,6 +214,9 @@ public class App {
         //aboutString();
         //aboutOperators();
         //aboutConditionals();
-        aboutLoops();
+        //aboutLoops();
+        //aboutBreakContinue();
+        //aboutArrays();
+        aboutArryList();
     }
 }
