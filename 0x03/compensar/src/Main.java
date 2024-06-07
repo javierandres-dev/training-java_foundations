@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import javax.swing.*;
 
@@ -88,12 +89,85 @@ public class Main {
                 "\n\t\tSubtotal (antes de impuestos): " + (pp1 + pp2);
         System.out.println(subtotal);
         final double impuestos = ((pp1 + pp2) * 0.19);
+        final DecimalFormat decimalFormat = new DecimalFormat("0.00");
         final String total = "\tTOTAL" +
                 "\n\t\tImpuestos (19%): $" + impuestos +
-                "\n\t\tTotal (con impuestos): " + ((pp1 + pp2) + impuestos);
+                "\n\t\tTotal (con impuestos): " + decimalFormat.format(((pp1 + pp2) + impuestos));
         System.out.println(total);
-        System.out.println(nc + ", Gracias por tu compra!");
+        System.out.println("**** " + nc + ", Gracias por tu compra! ****");
     }
+
+    private static void exercise9() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el primer número: ");
+        final int n1 = sc.nextInt();
+        System.out.print("Ingrese el segundo número: ");
+        final int n2 = sc.nextInt();
+        System.out.print("Ingrese el tercer número: ");
+        final int n3 = sc.nextInt();
+        if (n1 == n2 && n1 == n3) {
+            System.out.println("\tLos tres números son iguales");
+        } else if (n1 > n2 && n1 > n3) {
+            System.out.println("\tEl mayor número es el primer número ingresado: " + n1);
+        } else if (n2 > n1 && n2 > n3) {
+            System.out.println("\tEl mayor número es el segundo ingresado: " + n2);
+        } else if (n3 > n1 && n3 > n2) {
+            System.out.println("\tEl mayor número es el tercer ingresado: " + n3);
+        } else {
+            System.out.println("\t¿qué pasó?");
+        }
+    }
+
+    private static void exercise10() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el alto: ");
+        final int height = sc.nextInt();
+        System.out.print("Ingrese el ancho: ");
+        final int width = sc.nextInt();
+        System.out.println("\tÁrea: " + (height * width));
+        System.out.println("\tPerímetro: " + ((height + width) * 2));
+    }
+
+    private static void exercise11() {
+        final String validUsername = "Pepita";
+        final String validPassword = "ASD123";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese nombre de usuario: ");
+        final String username = sc.nextLine();
+        System.out.print("Ingrese contraseña: ");
+        final String password = sc.nextLine();
+        if (username.equals(validUsername) && password.equals(validPassword)) {
+            System.out.println("\tHola, " + username + "!\n\tSu acceso está aprobado");
+        } else {
+            System.out.println("\tAcceso denegado");
+        }
+    }
+
+    private static void exercise12() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el valor del sueldo: ");
+        final Double sueldoInicial = sc.nextDouble();
+        if (sueldoInicial >= 500) {
+            System.out.println("\tSueldo sin cambios: " + sueldoInicial);
+        } else {
+            System.out.print("Ingrese años de antigüedad: ");
+            final int anios = sc.nextInt();
+            Double porcentajeAumento = 0.0;
+            if (sueldoInicial < 500 && anios >= 10) {
+                porcentajeAumento = 0.20;
+            }
+            if (sueldoInicial < 500 && anios < 10) {
+                porcentajeAumento = 0.05;
+            }
+            final Double valorAumento = sueldoInicial * porcentajeAumento;
+            final Double sueldoFinal = sueldoInicial + valorAumento;
+            System.out.println("\tSueldo inicial: " + sueldoInicial +
+                    "\n\tValor aumento: " + valorAumento + ", correspondiente al " + (porcentajeAumento * 100) + "% " +
+                    "por antigüedad de " + anios + " años" +
+                    "\n\tSueldo final: " + sueldoFinal);
+        }
+    }
+
 
     public static void main(String[] args) {
         /*
@@ -115,7 +189,11 @@ public class Main {
         //exercise4();
         //exercise5();
         //exercise6();
-        exercise7();
+        //exercise7();
         //exercise8();
+        //exercise9();
+        //exercise10();
+        //exercise11();
+        //exercise12();
     }
 }
