@@ -48,6 +48,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a name: ");
         final String name = sc.nextLine();
+        sc.close();
         System.out.println("Hello, " + name + "!");
     }
 
@@ -83,6 +84,7 @@ public class Main {
         sc.nextLine();
         System.out.print("Nombre del comprador: ");
         final String nc = sc.nextLine();
+        sc.close();
         final String subtotal = "\tSUBTOTAL" +
                 "\n\t\tProducto1: " + np1 + ", $" + pp1 +
                 "\n\t\tProducto2: " + np2 + ", $" + pp2 +
@@ -105,6 +107,7 @@ public class Main {
         final int n2 = sc.nextInt();
         System.out.print("Ingrese el tercer número: ");
         final int n3 = sc.nextInt();
+        sc.close();
         if (n1 == n2 && n1 == n3) {
             System.out.println("\tLos tres números son iguales");
         } else if (n1 > n2 && n1 > n3) {
@@ -124,6 +127,7 @@ public class Main {
         final int height = sc.nextInt();
         System.out.print("Ingrese el ancho: ");
         final int width = sc.nextInt();
+        sc.close();
         System.out.println("\tÁrea: " + (height * width));
         System.out.println("\tPerímetro: " + ((height + width) * 2));
     }
@@ -136,6 +140,7 @@ public class Main {
         final String username = sc.nextLine();
         System.out.print("Ingrese contraseña: ");
         final String password = sc.nextLine();
+        sc.close();
         if (username.equals(validUsername) && password.equals(validPassword)) {
             System.out.println("\tHola, " + username + "!\n\tSu acceso está aprobado");
         } else {
@@ -148,10 +153,12 @@ public class Main {
         System.out.print("Ingrese el valor del sueldo: ");
         final Double sueldoInicial = sc.nextDouble();
         if (sueldoInicial >= 500) {
+            sc.close();
             System.out.println("\tSueldo sin cambios: " + sueldoInicial);
         } else {
             System.out.print("Ingrese años de antigüedad: ");
             final int anios = sc.nextInt();
+            sc.close();
             Double porcentajeAumento = 0.0;
             if (sueldoInicial < 500 && anios >= 10) {
                 porcentajeAumento = 0.20;
@@ -168,6 +175,71 @@ public class Main {
         }
     }
 
+    private static void exercise13() {
+        final byte option = Byte.parseByte(JOptionPane.showInputDialog("**** CALCULATOR ****\n\tSelect an option:\n\t1 - Add\n\t2 - Substract\n\t3 - Multiply\n\t4 - Divide"));
+        final int n1 = Integer.parseInt(JOptionPane.showInputDialog("Enter first number"));
+        final int n2 = Integer.parseInt(JOptionPane.showInputDialog("Enter second number"));
+        String operation = "";
+        int result = 0;
+        switch (option) {
+            case 1:
+                operation = " + ";
+                result = n1 + n2;
+                break;
+            case 2:
+                operation = " - ";
+                result = n1 - n2;
+                break;
+            case 3:
+                operation = " x ";
+                result = n1 * n2;
+                break;
+            case 4:
+                operation = " / ";
+                result = n1 / n2;
+                break;
+            default:
+                break;
+        }
+        if (!operation.isEmpty() && result != 0) {
+            JOptionPane.showMessageDialog(null, n1 + operation + n2 + " = " + result);
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid");
+        }
+    }
+
+    private static void exercise14() {
+        final Scanner sc = new Scanner(System.in);
+        byte mayores = 0;
+        byte menores = 0;
+        byte iguales = 0;
+        for (byte i = 1; i <= 10; i++) {
+            System.out.print("Ingrese la nota #" + i + ": ");
+            final byte nota = sc.nextByte();
+            sc.nextLine();
+            if (nota > 7) {
+                mayores++;
+                System.out.println("\tLa nota #" + i + " es mayor a 7");
+            } else if (nota < 7) {
+                menores++;
+                System.out.println("\tLa nota #" + i + " es menor a 7");
+            } else {
+                iguales++;
+                System.out.println("\tLa nota #" + i + " es igual a 7");
+            }
+        }
+        sc.close();
+        System.out.println("\n\t**** Total de notas ****\n\tMayores a 7: " + mayores +
+                "\n\tMenores a 7: " + menores + "\n\tIguales a 7: " + iguales);
+    }
+
+    private static void exercise15() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\t**** Circunferencia de un círculo ****\n\tIngrese el radio: ");
+        final double radio = sc.nextDouble();
+        sc.close();
+        System.out.println("\tLa circunferencia de un círculo cuyo radio es de " + radio + " es: " + (radio * 2) * 3.141592);
+    }
 
     public static void main(String[] args) {
         /*
@@ -195,5 +267,8 @@ public class Main {
         //exercise10();
         //exercise11();
         //exercise12();
+        //exercise13();
+        //exercise14();
+        //exercise15();
     }
 }
