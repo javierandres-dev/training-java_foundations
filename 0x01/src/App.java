@@ -10,12 +10,12 @@ public class App {
         System.out.println("Hello, World!");// print on a new line
         // text block
         System.out.println("""
-            Hello,
-            World!
-            """);
+                Hello,
+                World!
+                """);
     }
 
-    private static void aboutVariables(){
+    private static void aboutVariables() {
         // VARIABLES
         final String myConstant = "abc";
         System.out.println(myConstant);
@@ -23,7 +23,7 @@ public class App {
         System.out.println(myVariable);
     }
 
-    private static void aboutDataTypes(){
+    private static void aboutDataTypes() {
         // DATA TYPES
         // primitives
         byte myByte = 127;
@@ -49,7 +49,7 @@ public class App {
         System.out.println(myString);
     }
 
-    private static void aboutString(){
+    private static void aboutString() {
         // BUILT-IN METHODS - String
         String myString = "java is funny";
         System.out.println(myString);
@@ -62,10 +62,10 @@ public class App {
         System.out.println(myString.compareTo("java is funny"));
         System.out.println(myString.compareTo("java is fun"));
         System.out.println(myString.compareTo("javascript is funny"));
-        //System.out.println(myString);
+        // System.out.println(myString);
     }
 
-    private static void aboutOperators(){
+    private static void aboutOperators() {
         // OPERATORS
         // Concatenation
         System.out.println("Hello" + ", " + "World!");
@@ -112,7 +112,7 @@ public class App {
         System.out.println(!false);
     }
 
-    private static void aboutConditionals(){
+    private static void aboutConditionals() {
         // Conditionals
         if (100 > 10) {
             System.out.println("1..it's true");
@@ -122,8 +122,8 @@ public class App {
         } else {
             System.out.println("2..it's false");
         }
-        System.out.println((100>10) ? "3..It's true": "3..it's false");
-        System.out.println((100<10) ? "4..It's true": "4..it's false");
+        System.out.println((100 > 10) ? "3..It's true" : "3..it's false");
+        System.out.println((100 < 10) ? "4..It's true" : "4..it's false");
         if (100 == 10) {
             System.out.println("5..it's true");
         } else if (100 > 10) {
@@ -132,7 +132,7 @@ public class App {
             System.out.println("5..it's false");
         }
         String expression = "I'm an expression";
-        switch (expression){
+        switch (expression) {
             case "a":
                 System.out.println("a case");
                 break;
@@ -144,9 +144,9 @@ public class App {
         }
     }
 
-    private static void aboutLoops(){
+    private static void aboutLoops() {
         // Loops
-        for(int i = 0; i < 5; i++ ){
+        for (int i = 0; i < 5; i++) {
             System.out.println("for - i: " + i);
         }
 
@@ -162,15 +162,15 @@ public class App {
             i++;
         } while (i < 5);
 
-        String[] names = {"Jane", "John", "Pepita"};
+        String[] names = { "Jane", "John", "Pepita" };
         for (String name : names) {
             System.out.println("for-each - name: " + name);
         }
     }
 
-    private static void aboutBreakContinue(){
+    private static void aboutBreakContinue() {
         // Jump statements
-        for(int i = 1; i < 10; i++){
+        for (int i = 1; i < 10; i++) {
             if (i == 6) {
                 break;
             }
@@ -181,11 +181,11 @@ public class App {
         }
     }
 
-    private static void aboutArrays(){
+    private static void aboutArrays() {
         // Arrays
         String[] myArrayStrings;
-        String[] names = {"Jane", "John"};
-        int[] numbers = {10, 20, 30};
+        String[] names = { "Jane", "John" };
+        int[] numbers = { 10, 20, 30 };
         System.out.println("names: " + names);
         System.out.println("numbers.length: " + numbers.length);
         myArrayStrings = names;
@@ -197,26 +197,114 @@ public class App {
         numbers[1] = 20;
         System.out.println("numbers.length: " + numbers.length);
         // Multidimensional Arrays
-        int[][] myMatriz = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] myMatriz = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
         System.out.println(myMatriz[1][1]);
         myMatriz[1][1] = 0;
         System.out.println(myMatriz[1][1]);
     }
 
-    private static void aboutArryList(){
+    private static void aboutClasses() {
+        // Classes
+        MyClass myClass = new MyClass();
+        myClass.firstname = "Jane";
+        myClass.surname = "Doe";
+
+        myClass.myOtherClass = new MyOtherClass();
+        myClass.myOtherClass.country = "USA";
+        myClass.myOtherClass.city = "New York";
+        myClass.myOtherClass.complement = "Main Street 1001";
+
+        myClass.introduce();
+        myClass.greet("John");
+    }
+
+    private static void aboutConstructors() {
+        // Constructors
+        MyClassWithConstructor myClassWithConstructor = new MyClassWithConstructor("John", "Doe", 4321, true, "USA",
+                "New York", "Main Street 1001");
+        System.out.println(myClassWithConstructor);
+        System.out.println(myClassWithConstructor.firstname);
+    }
+
+    private static void aboutEncapsulation() {
+        // Encapsulation
+        User user = new User("Jane", "jane", 1234);
+        System.out.println(user.getName());
+        user.setName("John");
+        user.showInfo();
+    }
+
+    private static void aboutInheritanceAndPolymorphism() {
+        // Inheritance, Polymorphism, Class attribute
+        Cat cat = new Cat("Tom");
+        Dog dog = new Dog("Pluto");
+
+        System.out.println("I'm " + cat.getName() + "..." + cat.makeSound());
+        System.out.println("I'm " + dog.getName() + "..." + dog.makeSound());
+
+        Animal.showInstanceCounter();
+    }
+
+    private static void aboutAbstractClass() {
+        // Abstract class
+        Square square = new Square(2);
+        square.showInfo();
+        System.out.println(square.calculateArea());
+    }
+
+    private static void aboutInterfaces() {
+        // Interfaces
+        UsingInterface usingInterface = new UsingInterface();
+        usingInterface.meth();
+    }
+
+    private static void aboutExceptions() {
+        // Exceptions (unchecked and checked)
+
+        int a = 1;
+        int b = 0;
+        // sample unchecked exception
+        // System.out.println(a / b);
+
+        // handle exception
+        try {
+            System.out.println(a / b);
+        } catch (Exception e) {
+            System.out.println("e: " + e);
+            e.printStackTrace();
+        } finally {
+            System.out.println("...finaly...");
+        }
+    }
+
+    private static void aboutArryList() {
         // Array List
+        System.out.println("PENDING...Array List!!!");
+    }
+
+    private static void aboutCollections() {
+        // Collections
+        System.out.println("PENDING...Collections!!!");
     }
 
     public static void main(String[] args) throws Exception {
-        //aboutPrint();
-        //aboutVariables();
-        //aboutDataTypes();
-        //aboutString();
-        //aboutOperators();
-        //aboutConditionals();
-        //aboutLoops();
-        //aboutBreakContinue();
-        //aboutArrays();
+        // aboutPrint();
+        // aboutVariables();
+        // aboutDataTypes();
+        // aboutString();
+        // aboutOperators();
+        // aboutConditionals();
+        // aboutLoops();
+        // aboutBreakContinue();
+        // aboutArrays();
+        // aboutClasses();
+        // aboutConstructors();
+        // aboutEncapsulation();
+        // aboutInheritanceAndPolymorphism();
+        // aboutAbstractClass();
+        // aboutInterfaces();
+        // aboutExceptions();
         aboutArryList();
+        aboutCollections();
     }
 }
