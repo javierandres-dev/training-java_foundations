@@ -3,6 +3,20 @@
 Comment
 multi-line
 */
+
+import java.util.Set;
+import java.util.HashSet;
+import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Vector;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.TreeMap;
+import java.util.LinkedHashMap;
+
 public class App {
 
     private static void aboutPrint() {
@@ -277,14 +291,116 @@ public class App {
         }
     }
 
-    private static void aboutArryList() {
-        // Array List
-        System.out.println("PENDING...Array List!!!");
-    }
-
     private static void aboutCollections() {
         // Collections
-        System.out.println("PENDING...Collections!!!");
+        // Set: HashSet, TreeSet, LinkedHashSet, etc
+        aboutSet();
+        // List: ArrayList, LinkedList, Vector, etc
+        aboutList();
+        // Map: HashMap, TreeMap, LinkedHashMap, etc
+        aboutMap();
+    }
+
+    private static void aboutSet() {
+        // Set: HashSet, TreeSet, LinkedHashSet, etc
+        // HashSet example
+        Set<String> superheroesInHashSet = new HashSet<>();
+        superheroesInHashSet.add("cat woman");
+        superheroesInHashSet.add("wonder woman");
+        superheroesInHashSet.add("spider woman");
+        superheroesInHashSet.add("superman");
+        superheroesInHashSet.add("batman");
+        superheroesInHashSet.add("spiderman");
+        superheroesInHashSet.add("ironman");
+        superheroesInHashSet.add("elektra");
+        superheroesInHashSet.add("storm");
+        System.out.println("superheroesInHashSet: " + superheroesInHashSet);
+        // TreeSet example
+        Set<String> superheroesInTreeSet = new TreeSet<>();
+        superheroesInTreeSet.add("cat woman");
+        superheroesInTreeSet.add("wonder woman");
+        superheroesInTreeSet.add("spider woman");
+        superheroesInTreeSet.add("superman");
+        superheroesInTreeSet.add("batman");
+        superheroesInTreeSet.add("spiderman");
+        superheroesInTreeSet.add("ironman");
+        superheroesInTreeSet.add("elektra");
+        superheroesInTreeSet.add("storm");
+        System.out.println("superheroesInTreeSet: " + superheroesInTreeSet);
+        // LinkedHashSet example
+        Set<String> superheroesInLinkedHashSet = new LinkedHashSet<>();
+        superheroesInLinkedHashSet.add("cat woman");
+        superheroesInLinkedHashSet.add("wonder woman");
+        superheroesInLinkedHashSet.add("spider woman");
+        superheroesInLinkedHashSet.add("superman");
+        superheroesInLinkedHashSet.add("batman");
+        superheroesInLinkedHashSet.add("spiderman");
+        superheroesInLinkedHashSet.add("ironman");
+        superheroesInLinkedHashSet.add("elektra");
+        superheroesInLinkedHashSet.add("storm");
+        System.out.println("superheroesInLinkedHashSet: " + superheroesInLinkedHashSet);
+    }
+
+    private static void aboutList() {
+        // List: ArrayList, LinkedList, Vector, etc
+        // ArrayList example
+        List<String> superheroesInArrayList = new ArrayList<>();
+        superheroesInArrayList.add("cat woman");
+        superheroesInArrayList.add("wonder woman");
+        superheroesInArrayList.add("spider woman");
+        superheroesInArrayList.add("superman");
+        superheroesInArrayList.add("batman");
+        superheroesInArrayList.add("spiderman");
+        superheroesInArrayList.add("ironman");
+        superheroesInArrayList.add("elektra");
+        superheroesInArrayList.add("storm");
+        System.out.println("superheroesInArrayList: " + superheroesInArrayList);
+        // LinkedList example
+        List<String> superheroesInLinkedList = new LinkedList<>();
+        superheroesInLinkedList.add("cat woman");
+        superheroesInLinkedList.add("wonder woman");
+        superheroesInLinkedList.add("spider woman");
+        superheroesInLinkedList.add("superman");
+        superheroesInLinkedList.add("batman");
+        superheroesInLinkedList.add("spiderman");
+        superheroesInLinkedList.add("ironman");
+        superheroesInLinkedList.add("elektra");
+        superheroesInLinkedList.add("storm");
+        System.out.println("superheroesInLinkedList: " + superheroesInLinkedList);
+        // Vector example
+        List<String> superheroesInVector = new Vector<>();
+        superheroesInVector.add("cat woman");
+        superheroesInVector.add("wonder woman");
+        superheroesInVector.add("spider woman");
+        superheroesInVector.add("superman");
+        superheroesInVector.add("batman");
+        superheroesInVector.add("spiderman");
+        superheroesInVector.add("ironman");
+        superheroesInVector.add("elektra");
+        superheroesInVector.add("storm");
+        System.out.println("superheroesInVector: " + superheroesInVector);
+    }
+
+    private static void aboutMap() {
+        // Map: HashMap, TreeMap, LinkedHashMap, etc
+        // HashMap example
+        Map<String, Integer> productsInHashMap = new HashMap<>();
+        productsInHashMap.put("monitor", 300);
+        productsInHashMap.put("keyboard", 200);
+        productsInHashMap.put("mouse", 100);
+        System.out.println("productsInHashMap: " + productsInHashMap);
+        // TreeMap example
+        Map<String, Integer> productsInTreeMap = new TreeMap<>();
+        productsInTreeMap.put("monitor", 300);
+        productsInTreeMap.put("keyboard", 200);
+        productsInTreeMap.put("mouse", 100);
+        System.out.println("productsInTreeMap: " + productsInTreeMap);
+        // LinkedHashMap example
+        Map<String, Integer> productsInLinkedHashMap = new LinkedHashMap<>();
+        productsInLinkedHashMap.put("monitor", 300);
+        productsInLinkedHashMap.put("keyboard", 200);
+        productsInLinkedHashMap.put("mouse", 100);
+        System.out.println("productsInLinkedHashMap: " + productsInLinkedHashMap);
     }
 
     public static void main(String[] args) throws Exception {
@@ -304,7 +420,6 @@ public class App {
         // aboutAbstractClass();
         // aboutInterfaces();
         // aboutExceptions();
-        aboutArryList();
-        aboutCollections();
+        // aboutCollections();
     }
 }
