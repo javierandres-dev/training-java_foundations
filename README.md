@@ -7,6 +7,7 @@ Self ― Learning
 :open_file_folder: 0x02 HangmanGame  
 :open_file_folder: 0x03 Challenges  
 :open_file_folder: 0x04 Spring - Rest API  
+:open_file_folder: 0x05 Exploring  
 ---
 ## Software Developer
 Built by [javi](https://github.com/javierandres-dev/) :copyright: 2024  
